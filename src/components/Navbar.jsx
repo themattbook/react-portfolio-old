@@ -26,7 +26,7 @@ const Navbar = () => {
                     </a>
                 </li>
                 <li className="hover:text-4xl opacity-50 hover:opacity-100 ease-in duration-100">
-                    <a href="/data/matthew_sweet_resume.docx" download target="_blank" rel="noreferrer">
+                    <a href="data/matthew_sweet_resume.docx" download target="_blank" rel="noreferrer">
                         <BsFillFileTextFill />
                     </a>
                 </li>
