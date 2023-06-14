@@ -1,10 +1,15 @@
-import './App.css';
+import './style.min.css';
+import Content from './components/Content';
+import Navbar from './components/Navbar';
 
 function App() {
     return (
-        <div className="flex justify-center items-center p-6 h-screen">
-            <h1 className="font-bold text-6xl">Hello, World!</h1>
-        </div>
+        <>
+            <div className="flex items-center justify-center min-h-[calc(100vh-64px)]">
+                <Content />
+            </div>
+            <Navbar />
+        </>
     );
 }
 
