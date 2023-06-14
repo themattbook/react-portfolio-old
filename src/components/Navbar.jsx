@@ -1,4 +1,5 @@
 import React from 'react';
+import Resume from '../data/matthew_sweet_resume.docx';
 import { BsLinkedin, BsGithub, BsTwitter, BsInstagram, BsFillFileTextFill } from 'react-icons/bs';
 
 const Navbar = () => {
@@ -26,7 +27,7 @@ const Navbar = () => {
                     </a>
                 </li>
                 <li className="hover:text-4xl opacity-50 hover:opacity-100 ease-in duration-100">
-                    <a href="/matthew_sweet_resume.docx" download target="_blank" rel="noreferrer">
+                    <a href={Resume} download target="_blank" rel="noreferrer">
                         <BsFillFileTextFill />
                     </a>
                 </li>
