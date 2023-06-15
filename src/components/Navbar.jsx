@@ -1,12 +1,11 @@
 import React from 'react';
-import Resume from '../data/matthew_sweet_resume.docx';
 import {
     BsLinkedin,
     BsGithub,
     BsTwitter,
     BsInstagram,
-    BsFillFileTextFill,
     BsHouseFill,
+    BsEnvelopeAtFill,
     BsBookHalf,
 } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
@@ -19,6 +18,11 @@ const Navbar = () => {
                     <li className="hover:text-blue-600 ease-in duration-100">
                         <Link to="/">
                             <BsHouseFill />
+                        </Link>
+                    </li>
+                    <li className="hover:text-blue-600 ease-in duration-100">
+                        <Link to="/contact">
+                            <BsEnvelopeAtFill />
                         </Link>
                     </li>
                     <li className="hover:text-blue-600 ease-in duration-100">
@@ -44,11 +48,6 @@ const Navbar = () => {
                     <li className="hover:text-blue-600 ease-in duration-100">
                         <a href="https://www.instagram.com/javascript_matt" target="_blank" rel="noreferrer">
                             <BsInstagram />
-                        </a>
-                    </li>
-                    <li className="hover:text-blue-600 ease-in duration-100">
-                        <a href={Resume} download target="_blank" rel="noreferrer">
-                            <BsFillFileTextFill />
                         </a>
                     </li>
                 </ul>

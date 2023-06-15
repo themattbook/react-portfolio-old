@@ -1,19 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc, onSnapshot } from 'firebase/firestore';
-
-const firebaseConfig = {
-    apiKey: process.env.REACT_APP_API_KEY,
-    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-    projectId: process.env.REACT_APP_PROJECT_ID,
-    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-    appId: process.env.REACT_APP_APP_ID,
-    measurementId: process.env.REACT_APP_MEASUREMENT_ID,
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+import { collection, addDoc, onSnapshot } from 'firebase/firestore';
+import db from '../firebase';
 
 const Guestbook = () => {
     const [name, setName] = useState('');
@@ -60,8 +47,13 @@ const Guestbook = () => {
 
     return (
         <div>
-            <div className="w-[40vw]">
-                <h1 className="text-5xl font-bold px-4 py-2">Guestbook</h1>
+            <div className="w-full sm:w-[40vw]">
+                <h1 className="text-4xl sm:text-5xl tracking-tight px-4 py-2">Guestbook</h1>
+                <h1 className="hidden sm:block sm:text-4xl tracking-tight px-4 py-2">
+                    I'm a product of the <strong>90's</strong>. When I saw other devs incorporating the{' '}
+                    <strong>classic Guestbook</strong> into their site, I thought it was a great use of{' '}
+                    <strong>Firebase</strong>. Feel free to sign if you'd like :)
+                </h1>
                 <form onSubmit={handleSubmit} className="mt-5 px-4 py-2">
                     <input
                         className="p-3 outline-none border-b border-b-gray-800 w-full"
@@ -90,9 +82,9 @@ const Guestbook = () => {
                                         {new Date(entry.createdAt.seconds * 1000).toLocaleString()}
                                     </span>
                                 </p>
-                                <pre>
+                                <p className="font-mono">
                                     <td className="py-2">{entry.message}</td>
-                                </pre>
+                                </p>
                             </li>
                         ))}
                     </ul>
