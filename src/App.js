@@ -1,5 +1,6 @@
 import { Routes, Route, Outlet } from 'react-router-dom';
-import './style.min.css';
+// import './style.min.css';
+import './App.css';
 import Content from './components/Content';
 import Navbar from './components/Navbar';
 import GuestBook from './components/GuestBook';
@@ -7,7 +8,7 @@ import GuestBook from './components/GuestBook';
 function App() {
     return (
         <>
-            <div className="flex items-center justify-center min-h-[calc(100vh-64px)]">
+            <div className="min-h-screen">
                 <Routes>
                     <Route path="/" element={<Layout />}>
                         <Route index element={<Home />} />
@@ -16,7 +17,6 @@ function App() {
                     </Route>
                 </Routes>
             </div>
-
             <Navbar />
         </>
     );
@@ -27,11 +27,19 @@ function Layout() {
 }
 
 function Home() {
-    return <Content />;
+    return (
+        <div className="flex min-h-screen items-center justify-center">
+            <Content />
+        </div>
+    );
 }
 
 function Guestbook() {
-    return <GuestBook />;
+    return (
+        <div className="flex justify-center min-h-screen">
+            <GuestBook />
+        </div>
+    );
 }
 
 export default App;
